@@ -22,7 +22,7 @@ const config = {
 		paths: {
 			base: dev ? '' : '/python-ds/pyscript-lab'
 		},
-		appDir: 'public',
+		appDir: 'svelte',
 		prerender: {
 			// This can be false if you're using a fallback (i.e. SPA mode)
 			default: true
