@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/%sveltekit.assets%/favicon.png" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js"></script>
+    <title>PyScript L.A.B</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+      Bokeh.set_log_level("info");
+    </script>
+    <py-env>
+- bokeh
+    </py-env>
+    %sveltekit.head%
+  </head>
+  <body class="flex flex-col h-screen">
+    <div class="w-full flex-grow">%sveltekit.body%</div>
+    <footer class="bg-slate-900 w-full h-10 align-middle">
+      <p class="text-slate-500 px-2 mt-2">Dont mind me...I'm just a footer...for now...</p>
+    </footer>
+  </body>
+</html>
