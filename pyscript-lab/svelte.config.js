@@ -15,7 +15,7 @@ const config = {
 			pages: 'public',
 			assets: 'public',
 			domain: null,
-			jekyll: false,
+			jekyll: true,
 			fallback: null,
 			precompress: false
 		}),
