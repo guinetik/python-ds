@@ -1,6 +1,6 @@
 {
 	"name": "pyscript-lab",
-	"version": "0.0.5",
+	"version": "0.0.51",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",

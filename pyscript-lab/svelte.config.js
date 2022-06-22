@@ -20,7 +20,14 @@ const config = {
 			precompress: false
 		}),
 		paths: {
-			base: dev ? '' : '/python-ds/pyscript-lab'
+			// note to future me
+			// use github path when building 4 prod
+			// this repo has a gh-pages branch that serves as a deployment path for the repo
+			// to build the app 4 produtction run
+			// ´npm run build´ 
+			// then commit stuff to git then
+			// `push-dir --dir=public --branch=gh-pages`
+			base: dev ? '' : '/python-ds'
 		},
 		appDir: 'svelte',
 		prerender: {
