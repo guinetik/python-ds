@@ -71,13 +71,13 @@ export class SiteMap {
     if (page) {
       const props = page.props.reduce((accumulator, currentValue) => {
         accumulator.value = accumulator.value + "," + currentValue.name;
-        console.log("fkweokfowkefo", accumulator);
+        ////console.log("fkweokfowkefo", accumulator);
         return accumulator;
       }, new PageProp("props", "title,url"));
-      console.log("accumulator", props);
+      //console.log("accumulator", props);
       let tp = this.templates[t];
       props.value.split(",").forEach((p) => {
-        console.log("p", p);
+        //console.log("p", p);
         tp = tp.replaceAll("{" + p + "}", page.getProp(p).value);
       });
       return {

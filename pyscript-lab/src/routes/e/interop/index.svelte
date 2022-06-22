@@ -25,7 +25,7 @@
   let pyScriptRunner = RunPython();
   // When the screen loads, we want to load our script
   onMount(() => {
-    console.log("onMount");
+    //console.log("onMount");
     pyScriptRunner.runScript(pyScriptUrl, "script_gutter", false);
   });
   // when the screen is destroyed we want to destroy all python tags
