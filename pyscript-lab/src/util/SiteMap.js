@@ -1,0 +1,136 @@
+/**
+ * Experimenting with class-based javascript in 2022. Is there even a point to this?
+ * Well OOP is a good strat when you want your code to follow a particular strucutre.
+ * One aspect OOP helps a lot is avoidind code duplication.
+ * This class manages a site menu and their templates in order to minimize code duplication
+ */
+export class SiteMap {
+  /**
+   * Creates a new SiteMap instance
+   * @param {Array<Page>} pages - an array describing the pages of the site
+   */
+  constructor(pages) {
+    this.sitePages = pages;
+    const defaultTemplate = "<a href={url}>{title}</a>";
+    this.templates = {
+      main: defaultTemplate,
+      mobile: defaultTemplate,
+    };
+  }
+  /**
+   * Sets the template for creating links for the main menu
+   * @param {String} t - the template string.
+   */
+  setMainMenuTemplate(t) {
+    this.templates.main = t;
+  }
+  /**
+   * Sets the template for creating links for the mobile menu
+   * @param {String} t  - the template string
+   */
+  setMobileTemplate(t) {
+    this.templates.mobile = t;
+  }
+  /**
+   * Sets the template for creating any additional custom menu
+   * @param {String} name - name of the custom template
+   * @param {String} t - the template string
+   */
+  setCustomTemplate(name, t) {
+    this.templates[name] = t;
+  }
+  /**
+   * Helper function to find a page from its id
+   * @param {String} id - the page Id to search for
+   * @returns {Page} the page with that ID or undefined
+   */
+  getPageById(id) {
+    return this.sitePages.find((p) => id === p.id);
+  }
+
+  /**
+   *
+   * @param {String} pageId - Id of the page
+   * @param {String} t - the Template to generate the link
+   * @returns {String} - a string with a link
+   */
+  getPageLink(pageId, t) {
+    const page = this.getPageById(pageId);
+    page.setProp("title", page.title);
+    page.setProp("url", page.url);
+    if (page) {
+      const props = page.props.reduce((accumulator, currentValue) => {
+        accumulator.value = accumulator.value + "," + currentValue.name;
+        console.log("fkweokfowkefo", accumulator);
+        return accumulator;
+      }, new PageProp("props", "title,url"));
+      console.log("accumulator", props);
+      let tp = this.templates[t];
+      props.value.split(",").forEach((p) => {
+        console.log("p", p);
+        tp = tp.replaceAll("{" + p + "}", page.getProp(p).value);
+      });
+      return tp;
+    }
+  }
+
+  /**
+   * Get links for a mobile menu.
+   * This method loops through the sitemap's pages to get all pages that have prop show='mobile'|'all'
+   * @returns {Array<String>} an array of strings where each item is a templated link to a page in the mobile menu
+   */
+  getMobileLinks() {
+    const links = [];
+    this.sitePages.forEach((page) => {
+      const showProp = page.getProp("show").value || "no";
+      if (showProp === "mobile" || showProp === "all") {
+        links.push(this.getPageLink(page.id, "mobile"));
+      }
+    });
+    return links;
+  }
+}
+/**
+ * PageProp hold custom property
+ */
+export class PageProp {
+  /**
+   * A map item for page props
+   * @param {String} name prop name
+   * @param {Object} value propValue
+   */
+  constructor(name, value) {
+    this.name = name;
+    this.value = value;
+  }
+}
+/**
+ * Defines a page on our site
+ */
+export class Page {
+  /**
+   * Creates a new Page
+   * @param {String} id the ID for the page
+   * @param {String} title - Page title
+   * @param {String} url - Page Url
+   * @param {Array<PageProp>} props - An array of PageProp objects
+   */
+  constructor(id, title, url, props) {
+    this.id = id;
+    this.title = title;
+    this.url = url;
+    this.props = props;
+  }
+  /**
+   * Gets a page property by name
+   * @param {String} name - Name of the prop
+   * @returns {PageProp} the property of the pages
+   */
+  getProp(name) {
+    return this.props.find((p) => name === p.name);
+  }
+  setProp(name, value) {
+    this.props.push(new PageProp(name, value));
+  }
+}
+export default SiteMap;

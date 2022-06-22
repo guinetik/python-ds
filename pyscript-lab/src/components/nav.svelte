@@ -1,5 +1,17 @@
 <script>
   import { getLink } from "../util/utils";
+  import SiteMapStore from "../util/SiteMapStore"
+  import SiteMapLink from "./SiteMapLink.svelte"
+  //
+  let siteMap = null;
+  let mobileLinks = [];
+  //
+  SiteMapStore.subscribe((s) => {
+    siteMap = s;
+    mobileLinks = siteMap.getMobileLinks();
+    console.log("MobileLINKS", mobileLinks);
+  });
+  let toggleBurgerMenu = false;
 </script>
 
 <nav class="bg-gray-100">
@@ -58,7 +70,12 @@
       </div>
 
       <!-- mobile button goes here -->
-      <div class="md:hidden flex items-center">
+      <div
+        class="md:hidden flex items-center"
+        on:click={() => {
+          toggleBurgerMenu = !toggleBurgerMenu;
+        }}
+      >
         <button class="mobile-menu-button">
           <svg
             class="w-6 h-6"
@@ -80,18 +97,45 @@
   </div>
 
   <!-- mobile menu -->
-  <div class="mobile-menu hidden md:hidden">
-    <a
-      href={getLink("e/repl")}
-      class="py-5 px-3 text-sky-500 hover:text-yellow-500">R.E.P.L</a
+  <nav
+    id="mobile-navigation"
+    class="{toggleBurgerMenu ? 'visible opacity-100' : 'opacity-0 invisible'}
+    transition-all duration-500
+    fixed top-0 right-0 bottom-0 left-0 backdrop-blur-sm z-10"
+  >
+    <!-- UL Links -->
+    <ul
+      class="{toggleBurgerMenu ? 'translate-x-0' : 'translate-x-full'}
+      absolute top-0 right-0 bottom-0 w-9/12 py-4 bg-white drop-shadow-2xl z-10 transition-all duration-500"
     >
-    <a
-      href={getLink("e/interop")}
-      class="py-5 px-3 text-sky-500 hover:text-yellow-500">Interoperability</a
+      {#each mobileLinks as link}
+        <SiteMapLink link={link}/>
+      {/each}
+    </ul>
+
+    <!-- Close Button -->
+    <button
+      class="absolute top-0 right-0 bottom-0 left-0 {toggleBurgerMenu
+        ? 'opacity-100'
+        : 'opacity-0'}"
+      on:click={() => {
+        toggleBurgerMenu = !toggleBurgerMenu;
+      }}
     >
-    <a
-      href={getLink("e/bokeh")}
-      class="py-5 px-3 text-sky-500 hover:text-yellow-500">Bokeh</a
-    >
-  </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 absolute top-2 left-2"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </nav>
 </nav>
