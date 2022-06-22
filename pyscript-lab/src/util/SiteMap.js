@@ -39,6 +39,7 @@ export class SiteMap {
   setCustomTemplate(name, t) {
     this.templates[name] = t;
   }
+
   /**
    * Helper function to find a page from its id
    * @param {String} id - the page Id to search for
@@ -49,10 +50,19 @@ export class SiteMap {
   }
 
   /**
+   * Helper function to find a page from its url
+   * @param {String} url - the page Id to search for
+   * @returns {Page} the page with that url or undefined
+   */
+   getPageByUrl(url) {
+    return this.sitePages.find((p) => url === p.url);
+  }
+
+  /**
    *
    * @param {String} pageId - Id of the page
    * @param {String} t - the Template to generate the link
-   * @returns {String} - a string with a link
+   * @returns {Object} - an object containing the template link and a reference to a Page object
    */
   getPageLink(pageId, t) {
     const page = this.getPageById(pageId);
@@ -70,21 +80,40 @@ export class SiteMap {
         console.log("p", p);
         tp = tp.replaceAll("{" + p + "}", page.getProp(p).value);
       });
-      return tp;
+      return {
+        page: page,
+        template: tp
+      }
     }
   }
 
   /**
    * Get links for a mobile menu.
-   * This method loops through the sitemap's pages to get all pages that have prop show='mobile'|'all'
    * @returns {Array<String>} an array of strings where each item is a templated link to a page in the mobile menu
    */
   getMobileLinks() {
+    const m = "mobile";
+    return this.getLinks(m, m);
+  }
+  /**
+   * Get links for a mobile menu.
+   * @returns {Array<String>} an array of strings where each item is a templated link to a page in the mobile menu
+   */
+   getMainLinks() {
+    const m = "main";
+    return this.getLinks(m, m);
+  }
+  /**
+   * Get links for a specific menu menu.
+   * This method loops through the sitemap's pages to get all pages that have prop show='mobile'|'all'
+   * @returns {Array<String>} an array of strings where each item is a templated link to a page in the mobile menu
+   */
+   getLinks(template, show) {
     const links = [];
     this.sitePages.forEach((page) => {
       const showProp = page.getProp("show").value || "no";
-      if (showProp === "mobile" || showProp === "all") {
-        links.push(this.getPageLink(page.id, "mobile"));
+      if (showProp === show || showProp === "all") {
+        links.push(this.getPageLink(page.id, template));
       }
     });
     return links;

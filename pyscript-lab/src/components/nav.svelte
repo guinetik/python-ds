@@ -1,15 +1,17 @@
 <script>
   import { getLink } from "../util/utils";
-  import SiteMapStore from "../util/SiteMapStore"
-  import SiteMapLink from "./SiteMapLink.svelte"
+  import SiteMapStore from "../util/SiteMapStore";
+  import SiteMapLink from "./SiteMapLink.svelte";
+  import { page } from "$app/stores";
   //
   let siteMap = null;
   let mobileLinks = [];
+  let mainLinks = [];
   //
   SiteMapStore.subscribe((s) => {
     siteMap = s;
+    mainLinks = siteMap.getMainLinks();
     mobileLinks = siteMap.getMobileLinks();
-    console.log("MobileLINKS", mobileLinks);
   });
   let toggleBurgerMenu = false;
 </script>
@@ -31,19 +33,14 @@
 
         <!-- primary nav -->
         <div class="hidden md:flex items-center space-x-1">
-          <a
-            href={getLink("e/repl")}
-            class="py-5 px-3 text-sky-500 hover:text-yellow-500">R.E.P.L</a
-          >
-          <a
-            href={getLink("e/interop")}
-            class="py-5 px-3 text-sky-500 hover:text-yellow-500"
-            >Interoperability</a
-          >
-          <a
-            href={getLink("e/bokeh")}
-            class="py-5 px-3 text-sky-500 hover:text-yellow-500">Bokeh</a
-          >
+          {#each mainLinks as link}
+            <SiteMapLink
+              template={link.template}
+              page={link.page}
+              bind:active={$page.url.pathname}
+              activeClass="main_menu_active"
+            />
+          {/each}
         </div>
       </div>
 
@@ -109,7 +106,13 @@
       absolute top-0 right-0 bottom-0 w-9/12 py-4 bg-white drop-shadow-2xl z-10 transition-all duration-500"
     >
       {#each mobileLinks as link}
-        <SiteMapLink link={link}/>
+        <SiteMapLink
+          onclick={() => {toggleBurgerMenu = !toggleBurgerMenu}}
+          template={link.template}
+          page={link.page}
+          active={$page.url.pathname}
+          activeClass="mobile_menu_active"
+        />
       {/each}
     </ul>
 
