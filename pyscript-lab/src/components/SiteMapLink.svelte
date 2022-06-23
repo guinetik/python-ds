@@ -73,7 +73,7 @@
     //
     toggleActiveClasses();
     //
-    container = container.parentNode.replaceChild(linkDiv, container);
+    container.appendChild(linkDiv);
   });
   beforeUpdate(() => {
     activeSiteMapPage = siteMap.getPageByUrl(active);

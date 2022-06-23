@@ -39,7 +39,7 @@
     <p class="mt-6">
       <a
         class="text-sky-500"
-        href={getLink("py/bokeh_index.py")}
+        href="https://github.com/guinetik/python-ds/blob/master/pyscript-lab/static/py/bokeh_index.py"
         target="_blank">View source</a
       >
     </p>

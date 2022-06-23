@@ -31,27 +31,27 @@ const Runner = (opts) => {
     createOutput: (outputId) => {
       let py_output = document.createElement("div");
       py_output.id = outputId;
-      console.log("py_output", py_output);
+      //console.log("py_output", py_output);
       document.body.appendChild(py_output);
       return py_output;
     },
     _run: (code, ouputId, opts) => {
-      console.log("!!!");
-      console.log("RUN");
-      console.log("RUN");
-      console.log("RUN");
-      console.log("RUN");
-      console.log("!!!");
+      //console.log("!!!");
+      //console.log("RUN");
+      //console.log("RUN");
+      //console.log("RUN");
+      //console.log("RUN");
+      //console.log("!!!");
       try {
-        console.log("_run", opts);
+        //console.log("_run", opts);
         if (opts.createOutputDiv) {
-          console.log("creating output tag");
+          //console.log("creating output tag");
           pyRunner.output_div = pyRunner.createOutput(ouputId);
         } else {
-          console.log("reusing output tag");
+          //console.log("reusing output tag");
           pyRunner.output_div = document.getElementById(ouputId);
         }
-        console.log(" pyRunner.output_div", pyRunner.output_div);
+        //console.log(" pyRunner.output_div", pyRunner.output_div);
         pyRunner.run(code, pyRunner.output_div, opts);
       } catch (e) {
         pyRunner.clearPyDiv();
@@ -70,18 +70,18 @@ const Runner = (opts) => {
         }
       }
       //
-      console.log("tag", html_tag);
+      //console.log("tag", html_tag);
       // Create the DIV to attach the py-script tag
       let div = document.createElement("div");
       div.innerHTML = html_tag;
       //
-      console.log("div", div);
+      //console.log("div", div);
       pyRunner.py_div = div.firstElementChild;
       //
-      console.log("py_div", pyRunner.py_div);
+      //console.log("py_div", pyRunner.py_div);
       document.body.appendChild(pyRunner.py_div);
       try {
-        console.log("evaluates", pyRunner.py_div);
+        //console.log("evaluates", pyRunner.py_div);
         pyRunner.py_div.evaluate();
       } catch (error) {
         pyRunner.clearPyDiv();

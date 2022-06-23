@@ -3,10 +3,12 @@
   import SiteMapStore from "../util/SiteMapStore";
   import SiteMapLink from "./SiteMapLink.svelte";
   import { page } from "$app/stores";
+  import {beforeUpdate} from "svelte"
   //
   let siteMap = null;
   let mobileLinks = [];
   let mainLinks = [];
+  let visits = 0;
   //
   SiteMapStore.subscribe((s) => {
     siteMap = s;
@@ -14,6 +16,9 @@
     mobileLinks = siteMap.getMobileLinks();
   });
   let toggleBurgerMenu = false;
+  beforeUpdate(() => {
+    visits = window.visits;
+  })
 </script>
 
 <nav class="bg-gray-100">
@@ -46,23 +51,23 @@
 
       <!-- secondary nav -->
       <div class="hidden md:flex items-center space-x-1">
-        <a
-          href="https://linkedin.com/in/guinetik"
-          class="py-2 px-3 bg-blue-400 hover:bg-blue-300 text-blue-900 hover:text-blue-800 rounded transition duration-300"
+        <a href="https://github.com/guinetik/python-ds"
           ><img
-            class="inline w-6 h-6"
-            src={getLink("images/linkedin.svg")}
-            alt="Linkedin"
-          /> Linkedin
+            src="https://img.shields.io/badge/-View Source-gray?style=flat-square&logo=github&logoColor=white&link=https://github.com/guinetik"
+            alt="Visits"
+          />
         </a>
-        <a
-          href="https://github.com/guinetik"
-          class="py-2 px-3 bg-slate-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300"
+        <a href="https://guinetik.github.io/python-ds/"
           ><img
-            class="inline"
-            src={getLink("images/github.svg")}
-            alt="Github"
-          /> Github
+            src={`https://img.shields.io/static/v1?label=&message=${visits} Visitors&color=blueviolet&style=flat-square`}
+            alt="Visits"
+          />
+        </a>
+        <a href="https://linkedin.com/in/guinetik"
+          ><img
+            src="https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/guinetik/"
+            alt="Linkedin"
+          />
         </a>
       </div>
 
@@ -107,7 +112,9 @@
     >
       {#each mobileLinks as link}
         <SiteMapLink
-          onclick={() => {toggleBurgerMenu = !toggleBurgerMenu}}
+          onclick={() => {
+            toggleBurgerMenu = !toggleBurgerMenu;
+          }}
           template={link.template}
           page={link.page}
           active={$page.url.pathname}

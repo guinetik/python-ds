@@ -25,7 +25,7 @@
   let pyScriptRunner = RunPython();
   // When the screen loads, we want to load our script
   onMount(() => {
-    console.log("onMount");
+    //console.log("onMount");
     pyScriptRunner.runScript(pyScriptUrl, "script_gutter", false);
   });
   // when the screen is destroyed we want to destroy all python tags
@@ -47,11 +47,7 @@
 </script>
 
 <ExperimentCard {props}>
-  <div
-    slot="py_slot"
-    id="chart"
-    class="w-full h-full"
-  />
+  <div slot="py_slot" id="chart" class="w-full h-full" />
   <article slot="content_slot" class="mb-10">
     <h2 class="text-xl font-extrabold mb-5">Interoperability (js to py)</h2>
     <p>This example shows how to call a python function from JS</p>
@@ -89,7 +85,11 @@
       on:click={callPython}>Run</button
     >
     <p class="mt-4">
-      <a class="text-sky-500" href={pyScriptUrl} target="_blank">View source</a>
+      <a
+        class="text-sky-500"
+        href="https://github.com/guinetik/python-ds/blob/master/pyscript-lab/static/py/interop.py"
+        target="_blank">View source</a
+      >
     </p>
   </article>
 </ExperimentCard>
