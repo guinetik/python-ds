@@ -31,17 +31,21 @@
       Bokeh.set_log_level("info");
     </script>
     <py-env> - bokeh </py-env>
-    <meta http-equiv="content-security-policy" content=""><script type="text/javascript" data-svelte="svelte-35t31t">Bokeh.set_log_level("info");
-  </script><py-env data-svelte="svelte-35t31t">- bokeh </py-env>
-	<link rel="stylesheet" href="/python-ds/svelte/immutable/assets/pages/__layout.svelte-984fadee.css">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-3a6ab04b.js">
+    <meta http-equiv="content-security-policy" content=""><script type="text/javascript" data-svelte="svelte-1pawzoj">Bokeh.set_log_level("info");
+  </script><py-env data-svelte="svelte-1pawzoj">- bokeh
+- pandas
+- numpy
+</py-env>
+	<link rel="stylesheet" href="/python-ds/svelte/immutable/assets/pages/__layout.svelte-29145ecc.css">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-e29d7654.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5eb3cc7f.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5e479832.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-539ff4bd.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-5553ecfa.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/utils-4fc137b3.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/bokeh/1.svelte-b4fdfeb4.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/bokeh/1.svelte-4737e78c.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-befa17fa.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/RunPython-86cc62fa.js">
   </head>
   <body class="flex flex-col h-screen">
     <div class="w-full flex-grow">
@@ -93,7 +97,11 @@
     
     <button class="absolute top-0 right-0 bottom-0 left-0 opacity-0"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute top-2 left-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></nav></nav>
   <main class="w-full h-[calc(100%-120px)]"><div class="py-10 w-full flex items-center justify-center h-full"><div class="bg-white rounded-lg shadow-2xl overflow-hidden w-10/12 ">
-      <div class="md:flex"><section class="bg-slate-300 lg:w-3/4 md:flex-grow md:w-full min-h-[380px]"><div slot="py_slot" id="chart" class="flex items-center justify-center h-full"><img width="200" height="200" src="https://i.gifer.com/origin/a7/a742fbe8ed45f6455cc767ab4c41997e_w200.gif" alt="Under Construction"></div></section>
+      <div class="md:flex"><section class="bg-slate-300 lg:w-3/4 md:flex-grow md:w-full min-h-[380px]"><div slot="py_slot"><div id="chart" class="w-full h-auto"></div>
+    <div id="chart2" class="w-full"></div>
+    <div id="chart3" class="w-full h-full"></div>
+    <div id="chart4" class="w-full h-min"></div>
+    <div id="chart5" class="w-full h-max"></div></div></section>
         <section class="p-4 space-y-3 md:w-1/2 lg:w-4/12 border-t border-slate-900 md:border-l"><article slot="content_slot" class="mb-10"><h2 class="text-xl font-extrabold mb-5">Bokeh + Pandas</h2>
     <p>Plotting Bokeh Graph from a Pandas Dataframe</p>
     <p class="mt-6"><a class="text-sky-500" href="/python-ds/py/bokeh_index.py" target="_blank">View source</a></p></article>
@@ -105,10 +113,10 @@
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="1uav377">
-		import { start } from "/python-ds/svelte/immutable/start-3a6ab04b.js";
+		<script type="module" data-sveltekit-hydrate="1yzqzpj">
+		import { start } from "/python-ds/svelte/immutable/start-e29d7654.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1uav377"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1yzqzpj"]').parentNode,
 			paths: {"base":"/python-ds","assets":"/python-ds"},
 			session: {},
 			route: true,

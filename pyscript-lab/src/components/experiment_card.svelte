@@ -38,7 +38,7 @@
       </div>
       <!--     footer -->
       <footer class="py-3 px-6 bg-slate-800 text-xs text-white font-mono">
-        <div id="script_gutter" />
+        <div id="script_gutter"/>
       </footer>
     </div>
   </div>

@@ -7,5 +7,6 @@
         "comments": "on",
         "strings": "on"
     },
-    "tailwindCSS.emmetCompletions": true
+    "tailwindCSS.emmetCompletions": true,
+    "python.formatting.provider": "yapf"
 }
