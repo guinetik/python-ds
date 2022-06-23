@@ -30,18 +30,31 @@
     <script type="text/javascript">
       Bokeh.set_log_level("info");
     </script>
-    <py-env> - bokeh </py-env>
-    <meta http-equiv="content-security-policy" content=""><script type="text/javascript" data-svelte="svelte-7lmhz5">Bokeh.set_log_level("info");
-  </script><py-env data-svelte="svelte-7lmhz5">- bokeh</py-env>
+<!-- 
+    <py-config>
+runtimes:
+  - src: "https://cdn.jsdelivr.net/npm/pyodide@0.21.0-alpha.1/pyodide.js"
+    name: 0.21.0-alpha.1
+    lang: python
+    </py-config> 
+  -->
+    <py-env>
+- bokeh
+- pandas
+- numpy
+- networkx
+    </py-env>
+    <meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/python-ds/svelte/immutable/assets/pages/__layout.svelte-29145ecc.css">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-e29d7654.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5eb3cc7f.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5e479832.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-c4411749.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-fbf23eb0.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-2f88ce63.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-5553ecfa.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-c669b9c1.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/utils-4fc137b3.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/bokeh/2.svelte-2724fb73.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-befa17fa.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/bokeh/2.svelte-e404011e.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-90629e29.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/RunPython-86cc62fa.js">
   </head>
   <body class="flex flex-col h-screen">
     <div class="w-full flex-grow">
@@ -53,6 +66,9 @@
 
         
         <div class="hidden md:flex items-center space-x-1">
+
+
+<div></div>
 
 
 <div></div>
@@ -88,27 +104,36 @@
 <div></div>
 
 
+<div></div>
+
+
 <div></div></ul>
 
     
     <button class="absolute top-0 right-0 bottom-0 left-0 opacity-0"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute top-2 left-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></nav></nav>
   <main class="w-full h-[calc(100%-120px)]"><div class="py-10 w-full flex items-center justify-center h-full"><div class="bg-white rounded-lg shadow-2xl overflow-hidden w-10/12 ">
-      <div class="md:flex"><section class="bg-slate-300 lg:w-3/4 md:flex-grow md:w-full min-h-[380px]"><div slot="py_slot" id="chart" class="flex items-center justify-center h-full"><img width="200" height="200" src="https://i.gifer.com/origin/a7/a742fbe8ed45f6455cc767ab4c41997e_w200.gif" alt="Under Construction"></div></section>
-        <section class="p-4 space-y-3 md:w-1/2 lg:w-4/12 border-t border-slate-900 md:border-l"><article slot="content_slot"><h2 class="text-xl font-extrabold mb-5">Bokeh Network Graphs</h2>
-    <p>Using Bokeh to plot NetworkX&#39;s graphs.</p>
-    <p class="mt-6"><a class="text-sky-500" href="/python-ds/py/bokeh_index.py" target="_blank">View source</a></p></article>
-          <div class="flex"><a href="/python-ds/e/interop/" class="text-xs ml-0 py-2 px-3 bg-blue-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300"><img class="inline h-4" src="/python-ds/images/arrow-left.svg" alt="Next">Previous
+      <div class="md:flex"><section class="bg-slate-300 lg:w-3/4 md:flex-grow md:w-full min-h-[380px]"><div slot="py_slot"><div id="chart" class="w-full h-auto"></div>
+    <div id="chart2" class="w-full h-auto"></div>
+    <div id="chart3" class="w-full h-auto"></div></div></section>
+        <section class="p-4 space-y-3 md:w-1/2 lg:w-4/12 border-t border-slate-900 md:border-l"><article slot="content_slot" class="mb-10"><h2 class="text-xl font-extrabold mb-5">Bokeh + Networkx</h2>
+    <p>Plotting Bokeh network graphs using NetworkX
+      <br>
+      These charts show stats for StackOverflow language statistics.
+    </p>
+    <p class="mt-6"><a class="text-sky-500" href="https://github.com/guinetik/python-ds/blob/master/pyscript-lab/static/py/bokeh_pandas.py" target="_blank">View source</a>
+      <br>
+      <a class="text-sky-500" target="_blank" href="https://www.kaggle.com/code/mayeesha/network-analysis-for-dummies-stackoverflow-data/notebook">Adapted from this Kaggle</a></p></article>
+          <div class="flex"><a href="/python-ds/e/bokeh/1" class="text-xs ml-0 py-2 px-3 bg-blue-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300"><img class="inline h-4" src="/python-ds/images/arrow-left.svg" alt="Next">Previous
             </a>
-            <a href="/python-ds/e/bokeh/1" class="text-xs ml-auto py-2 px-3 bg-yellow-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300">Next<img class="inline h-4" src="/python-ds/images/arrow-next.svg" alt="Next"></a></div></section></div>
+            <a href="/python-ds/e/repl" class="text-xs ml-auto py-2 px-3 bg-yellow-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300">Next<img class="inline h-4" src="/python-ds/images/arrow-next.svg" alt="Next"></a></div></section></div>
       
-      <footer class="py-3 px-6 bg-slate-800 text-xs text-white font-mono"><div id="script_gutter"></div></footer></div></div></main>
-</div>
+      <footer class="py-3 px-6 bg-slate-800 text-xs text-white font-mono"><div id="script_gutter"></div></footer></div></div></main></div>
 
 
-		<script type="module" data-sveltekit-hydrate="hl9omy">
-		import { start } from "/python-ds/svelte/immutable/start-e29d7654.js";
+		<script type="module" data-sveltekit-hydrate="io6023">
+		import { start } from "/python-ds/svelte/immutable/start-c4411749.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="hl9omy"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="io6023"]').parentNode,
 			paths: {"base":"/python-ds","assets":"/python-ds"},
 			session: {},
 			route: true,

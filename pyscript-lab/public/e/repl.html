@@ -30,17 +30,30 @@
     <script type="text/javascript">
       Bokeh.set_log_level("info");
     </script>
-    <py-env> - bokeh </py-env>
+<!-- 
+    <py-config>
+runtimes:
+  - src: "https://cdn.jsdelivr.net/npm/pyodide@0.21.0-alpha.1/pyodide.js"
+    name: 0.21.0-alpha.1
+    lang: python
+    </py-config> 
+  -->
+    <py-env>
+- bokeh
+- pandas
+- numpy
+- networkx
+    </py-env>
     <meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/python-ds/svelte/immutable/assets/pages/__layout.svelte-29145ecc.css">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-e29d7654.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5eb3cc7f.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5e479832.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-c4411749.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-fbf23eb0.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-2f88ce63.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-5553ecfa.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-c669b9c1.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/utils-4fc137b3.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/repl.svelte-38a5bc37.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-befa17fa.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/repl.svelte-9941786f.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-90629e29.js">
   </head>
   <body class="flex flex-col h-screen">
     <div class="w-full flex-grow">
@@ -52,6 +65,9 @@
 
         
         <div class="hidden md:flex items-center space-x-1">
+
+
+<div></div>
 
 
 <div></div>
@@ -87,6 +103,9 @@
 <div></div>
 
 
+<div></div>
+
+
 <div></div></ul>
 
     
@@ -106,10 +125,10 @@
       <footer class="py-3 px-6 bg-slate-800 text-xs text-white font-mono"><div id="script_gutter"></div></footer></div></div></main></div>
 
 
-		<script type="module" data-sveltekit-hydrate="15dzfdp">
-		import { start } from "/python-ds/svelte/immutable/start-e29d7654.js";
+		<script type="module" data-sveltekit-hydrate="s0d9i5">
+		import { start } from "/python-ds/svelte/immutable/start-c4411749.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="15dzfdp"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="s0d9i5"]').parentNode,
 			paths: {"base":"/python-ds","assets":"/python-ds"},
 			session: {},
 			route: true,
@@ -118,7 +137,7 @@
 			hydrate: {
 				status: 200,
 				error: null,
-				nodes: [0, 6],
+				nodes: [0, 7],
 				params: {},
 				routeId: "e/repl"
 			}

@@ -1,5 +1,5 @@
 import { SiteMap, Page, PageProp } from "../util/SiteMap";
-import {getLink} from "./utils"
+import { getLink } from "./utils";
 import { writable } from "svelte/store";
 //
 const pages = [
@@ -23,9 +23,14 @@ const pages = [
     new PageProp("prev_page", getLink("e/bokeh")),
     new PageProp("next_page", getLink("e/bokeh/2")),
   ]),
-  new Page("bokeh_2", "Bokeh + Pandas", getLink("e/bokeh/2"), [
+  new Page("bokeh_2", "Bokeh + NetworkX", getLink("e/bokeh/2"), [
     new PageProp("show", "none"),
-    new PageProp("prev_page", getLink("e/bokeh")),
+    new PageProp("prev_page", getLink("e/bokeh/1")),
+    new PageProp("next_page", getLink("e/media")),
+  ]),
+  new Page("media", "Media", getLink("e/media"), [
+    new PageProp("show", "all"),
+    new PageProp("prev_page", getLink("e/bokeh/2")),
     new PageProp("next_page", getLink("/")),
   ]),
   new Page("github", "Github", "https://github.com/guinetik", [

@@ -30,21 +30,30 @@
     <script type="text/javascript">
       Bokeh.set_log_level("info");
     </script>
-    <py-env> - bokeh </py-env>
-    <meta http-equiv="content-security-policy" content=""><script type="text/javascript" data-svelte="svelte-1pawzoj">Bokeh.set_log_level("info");
-  </script><py-env data-svelte="svelte-1pawzoj">- bokeh
+<!-- 
+    <py-config>
+runtimes:
+  - src: "https://cdn.jsdelivr.net/npm/pyodide@0.21.0-alpha.1/pyodide.js"
+    name: 0.21.0-alpha.1
+    lang: python
+    </py-config> 
+  -->
+    <py-env>
+- bokeh
 - pandas
 - numpy
-</py-env>
+- networkx
+    </py-env>
+    <meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/python-ds/svelte/immutable/assets/pages/__layout.svelte-29145ecc.css">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-e29d7654.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5eb3cc7f.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-5e479832.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-c4411749.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-fbf23eb0.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-2f88ce63.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/singletons-d1fb5791.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-5553ecfa.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-c669b9c1.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/utils-4fc137b3.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/bokeh/1.svelte-4737e78c.js">
-	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-befa17fa.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/bokeh/1.svelte-d3d5377b.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-90629e29.js">
 	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/RunPython-86cc62fa.js">
   </head>
   <body class="flex flex-col h-screen">
@@ -57,6 +66,9 @@
 
         
         <div class="hidden md:flex items-center space-x-1">
+
+
+<div></div>
 
 
 <div></div>
@@ -92,6 +104,9 @@
 <div></div>
 
 
+<div></div>
+
+
 <div></div></ul>
 
     
@@ -103,20 +118,22 @@
     <div id="chart4" class="w-full h-min"></div>
     <div id="chart5" class="w-full h-max"></div></div></section>
         <section class="p-4 space-y-3 md:w-1/2 lg:w-4/12 border-t border-slate-900 md:border-l"><article slot="content_slot" class="mb-10"><h2 class="text-xl font-extrabold mb-5">Bokeh + Pandas</h2>
-    <p>Plotting Bokeh Graph from a Pandas Dataframe</p>
-    <p class="mt-6"><a class="text-sky-500" href="/python-ds/py/bokeh_index.py" target="_blank">View source</a></p></article>
+    <p>Plotting Bokeh graphs from a Pandas Dataframe
+      <br>
+      These charts show stats for AirBnb&#39;s listings.
+    </p>
+    <p class="mt-6"><a class="text-sky-500" href="https://github.com/guinetik/python-ds/blob/master/pyscript-lab/static/py/bokeh_pandas.py" target="_blank">View source</a></p></article>
           <div class="flex"><a href="/python-ds/e/bokeh" class="text-xs ml-0 py-2 px-3 bg-blue-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300"><img class="inline h-4" src="/python-ds/images/arrow-left.svg" alt="Next">Previous
             </a>
             <a href="/python-ds/e/bokeh/2" class="text-xs ml-auto py-2 px-3 bg-yellow-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300">Next<img class="inline h-4" src="/python-ds/images/arrow-next.svg" alt="Next"></a></div></section></div>
       
-      <footer class="py-3 px-6 bg-slate-800 text-xs text-white font-mono"><div id="script_gutter"></div></footer></div></div></main>
-</div>
+      <footer class="py-3 px-6 bg-slate-800 text-xs text-white font-mono"><div id="script_gutter"></div></footer></div></div></main></div>
 
 
-		<script type="module" data-sveltekit-hydrate="1yzqzpj">
-		import { start } from "/python-ds/svelte/immutable/start-e29d7654.js";
+		<script type="module" data-sveltekit-hydrate="1yt8tt1">
+		import { start } from "/python-ds/svelte/immutable/start-c4411749.js";
 		start({
-			target: document.querySelector('[data-sveltekit-hydrate="1yzqzpj"]').parentNode,
+			target: document.querySelector('[data-sveltekit-hydrate="1yt8tt1"]').parentNode,
 			paths: {"base":"/python-ds","assets":"/python-ds"},
 			session: {},
 			route: true,
