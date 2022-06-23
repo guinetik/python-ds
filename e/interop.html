@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="//python-ds/favicon.png" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.2.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-gl-2.4.2.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.2.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-2.4.2.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.bokeh.org/bokeh/release/bokeh-mathjax-2.4.2.min.js"
+    ></script>
+    <title>PyScript L.A.B</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+      Bokeh.set_log_level("info");
+    </script>
+<!-- 
+    <py-config>
+runtimes:
+  - src: "https://cdn.jsdelivr.net/npm/pyodide@0.21.0-alpha.1/pyodide.js"
+    name: 0.21.0-alpha.1
+    lang: python
+    </py-config> 
+  -->
+    <py-env>
+- bokeh
+- pandas
+- numpy
+- networkx
+    </py-env>
+    <meta http-equiv="content-security-policy" content="">
+	<link rel="stylesheet" href="/python-ds/svelte/immutable/assets/pages/__layout.svelte-29145ecc.css">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/start-c4411749.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-fbf23eb0.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/index-2f88ce63.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/singletons-d1fb5791.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/__layout.svelte-c669b9c1.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/utils-4fc137b3.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/pages/e/interop/index.svelte-f76a665d.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/experiment_card-90629e29.js">
+	<link rel="modulepreload" href="/python-ds/svelte/immutable/chunks/RunPython-86cc62fa.js">
+  </head>
+  <body class="flex flex-col h-screen">
+    <div class="w-full flex-grow">
+
+
+<div class="w-full h-full bg-gray-600"><nav class="bg-gray-100"><div class="max-w-6xl mx-auto px-4"><div class="flex justify-between"><div class="flex space-x-4">
+        <div><a href="/python-ds" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900"><img src="/python-ds/images/python.svg" alt="PyScript L.A.B">
+            <span class="font-bold">PyScript L.A.B</span></a></div>
+
+        
+        <div class="hidden md:flex items-center space-x-1">
+
+
+<div></div>
+
+
+<div></div>
+
+
+<div></div>
+
+
+<div></div></div></div>
+
+      
+      <div class="hidden md:flex items-center space-x-1"><a href="https://github.com/guinetik/python-ds"><img src="https://img.shields.io/badge/-View Source-gray?style=flat-square&logo=github&logoColor=white&link=https://github.com/guinetik" alt="Visits"></a>
+        <a href="https://guinetik.github.io/python-ds/"><img src="https://img.shields.io/static/v1?label=&amp;message=0 Visitors&amp;color=blueviolet&amp;style=flat-square" alt="Visits"></a>
+        <a href="https://linkedin.com/in/guinetik"><img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/guinetik/" alt="Linkedin"></a></div>
+
+      
+      <div class="md:hidden flex items-center"><button class="mobile-menu-button"><svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></button></div></div></div>
+
+  
+  <nav id="mobile-navigation" class="opacity-0 invisible transition-all duration-500 fixed top-0 right-0 bottom-0 left-0 backdrop-blur-sm z-10">
+    <ul class="translate-x-full absolute top-0 right-0 bottom-0 w-9/12 py-4 bg-white drop-shadow-2xl z-10 transition-all duration-500">
+
+
+<div></div>
+
+
+<div></div>
+
+
+<div></div>
+
+
+<div></div>
+
+
+<div></div>
+
+
+<div></div></ul>
+
+    
+    <button class="absolute top-0 right-0 bottom-0 left-0 opacity-0"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 absolute top-2 left-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button></nav></nav>
+  <main class="w-full h-[calc(100%-120px)]"><div class="py-10 w-full flex items-center justify-center h-full"><div class="bg-white rounded-lg shadow-2xl overflow-hidden w-10/12 ">
+      <div class="md:flex"><section class="bg-slate-300 lg:w-3/4 md:flex-grow md:w-full min-h-[380px]"><div slot="py_slot" id="chart" class="w-full h-full"></div></section>
+        <section class="p-4 space-y-3 md:w-1/2 lg:w-4/12 border-t border-slate-900 md:border-l"><article slot="content_slot" class="mb-10"><h2 class="text-xl font-extrabold mb-5">Interoperability (js to py)</h2>
+    <p>This example shows how to call a python function from JS</p>
+    <div class="flex bg-white items-center justify-center mt-8"><div class="px-1 py-2 border-2 border-grey rounded relative"><label class="absolute -my-[20px] -mx-2 bg-white px-2 text-grey-darker" for="txt_name">Name</label>
+        <input id="txt_name" type="text" class="appearance-none border-2 border-white rounded w-full py-2 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-white" placeholder="Who are you?" value=""></div>
+      <div class="px-1 py-2 border-2 border-red rounded relative ml-16"><label class="absolute -my-[20px] -mx-2 bg-white px-2 text-red" for="txt_age">Age</label>
+        <input id="txt_age" type="text" class="appearance-none border-2 border-white rounded w-full py-2 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-white" placeholder="How old are you?" value=""></div></div>
+    <button class="bg-green-400 flex-grow w-full py-2 px-3 mt-2" type="button">Run</button>
+    <p class="mt-4"><a class="text-sky-500" href="https://github.com/guinetik/python-ds/blob/master/pyscript-lab/static/py/interop.py" target="_blank">View source</a></p></article>
+          <div class="flex"><a href="/python-ds/e/repl" class="text-xs ml-0 py-2 px-3 bg-blue-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300"><img class="inline h-4" src="/python-ds/images/arrow-left.svg" alt="Next">Previous
+            </a>
+            <a href="/python-ds/e/bokeh" class="text-xs ml-auto py-2 px-3 bg-yellow-400 hover:bg-slate-300 text-slate-900 hover:text-slate-800 rounded transition duration-300">Next<img class="inline h-4" src="/python-ds/images/arrow-next.svg" alt="Next"></a></div></section></div>
+      
+      <footer class="py-3 px-6 bg-slate-800 text-xs text-white font-mono"><div id="script_gutter"></div></footer></div></div></main></div>
+
+
+		<script type="module" data-sveltekit-hydrate="en2drw">
+		import { start } from "/python-ds/svelte/immutable/start-c4411749.js";
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="en2drw"]').parentNode,
+			paths: {"base":"/python-ds","assets":"/python-ds"},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [0, 5],
+				params: {},
+				routeId: "e/interop"
+			}
+		});
+	</script></div>
+    <footer class="bg-slate-900 w-full h-10 align-middle">
+      <p class="text-slate-500 px-2 mt-2">
+        Dont mind me...I'm just a footer...for now...
+      </p>
+    </footer>
+    <script>
+      function cb(response) {
+        window.visits = response.value;
+      }
+    </script>
+    <script
+      async
+      src="https://api.countapi.xyz/hit/guinetik.github.io:PATHNAME:/visits?callback=cb"
+    ></script>
+  </body>
+</html>
