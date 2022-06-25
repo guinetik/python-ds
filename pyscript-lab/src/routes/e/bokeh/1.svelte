@@ -37,23 +37,16 @@
   </div>
   <article slot="content_slot" class="mb-10">
     <h2 class="text-xl font-extrabold mb-5">Bokeh + Pandas</h2>
-    <p>Plotting Bokeh Graph from a Pandas Dataframe</p>
+    <p>Plotting Bokeh graphs from a Pandas Dataframe
+      <br/>
+      These charts show stats for AirBnb's listings.
+    </p>
     <p class="mt-6">
       <a
         class="text-sky-500"
-        href={getLink("py/bokeh_index.py")}
+        href="https://github.com/guinetik/python-ds/blob/master/pyscript-lab/static/py/bokeh_pandas.py"
         target="_blank">View source</a
       >
     </p>
   </article>
 </ExperimentCard>
-<svelte:head>
-  <script type="text/javascript">
-    Bokeh.set_log_level("info");
-  </script>
-<py-env>
-- bokeh
-- pandas
-- numpy
-</py-env>
-</svelte:head>

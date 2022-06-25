@@ -16,16 +16,20 @@
           <h2 class="text-xl font-extrabold mb-5">Hi there</h2>
           <p>
             These are some studies on PyScript and trying to find nice use cases
-            for the technology. Also, this repo tries to explore how convinient
+            for the technology. 
+            <br/>
+            Also, this repo tries to explore how convinient
             it is to deal with python scripts inside an already defined project
             strucutre as well as asking how well PyScript interacts with a JS
             framework like Svelte.
+            <br/>
+            Unfortunately the load times are very long so be patient.
           </p>
           <ul class="list-disc mx-4">
             <li>
               <a
-                href={getLink("e/bokeh")}
-                class="text-blue-500 hover:text-blue-900">PyScript + Bokeh</a
+                href="https://pyscript.net/"
+                class="text-blue-500 hover:text-blue-900">PyScript Website</a
               >
             </li>
           </ul>

@@ -30,7 +30,20 @@
     <script type="text/javascript">
       Bokeh.set_log_level("info");
     </script>
-    <py-env> - bokeh </py-env>
+<!-- 
+    <py-config>
+runtimes:
+  - src: "https://cdn.jsdelivr.net/npm/pyodide@0.21.0-alpha.1/pyodide.js"
+    name: 0.21.0-alpha.1
+    lang: python
+    </py-config> 
+  -->
+    <py-env>
+- bokeh
+- pandas
+- numpy
+- networkx
+    </py-env>
     %sveltekit.head%
   </head>
   <body class="flex flex-col h-screen">
